@@ -19,7 +19,7 @@
 
         <StackPanel Grid.Column="1">
             <TextBlock  Text="Kirakott sorok:" />
-            <WrapPanel x:Name="_SP_Pocket_Matrix">
+            <WrapPanel x:Name="_SP_Pocket_Matrix" Height="140px">
                 
             </WrapPanel>
             <Button Content="Start"/>

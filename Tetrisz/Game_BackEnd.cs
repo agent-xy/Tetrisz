@@ -14,13 +14,46 @@ namespace Tetrisz
         private static List<int[,]> _Mintak;
         private static bool Game_On;
         private static Tetrisz_Cube[,] Pocket_Map;
+        private static System.Timers.Timer Loader_Timer;
+        private static bool Can_Spown;
+        private static int[,] Moving_Item;
         public static void Start_Game()
         {
+            _Loader_Gen();
             _Mintak_Upload();
             _Pocket_Matrix();
             _Map_Gen();
             Game_On = true;
-            _Loader();
+            Can_Spown = true;
+        }
+
+        private static void _Loader_Gen()
+        {
+            Loader_Timer = new System.Timers.Timer(500);
+            Loader_Timer.AutoReset = true;
+            Loader_Timer.Elapsed += Loader_Timer_Elapsed;
+            Loader_Timer.Start();
+        }
+
+        private static void Loader_Timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            if (Game_On)
+            {
+                if (Can_Spown)
+                {
+                    Can_Spown = false;
+                    _Generate_New_Item();
+                } else
+                {
+
+                }
+                
+            }
+        }
+
+        private static void _Generate_New_Item()
+        {
+
         }
 
         private static void _Pocket_Matrix()
@@ -34,14 +67,6 @@ namespace Tetrisz
                     Pocket_Map[i, j] = new Tetrisz_Cube(0, i, j);
                     MainWindow._Main._SP_Pocket_Matrix.Children.Add(Pocket_Map[i, j].Texture);
                 }
-            }
-        }
-
-        private static void _Loader()
-        {
-            while (Game_On)
-            {
-
             }
         }
 
@@ -69,6 +94,7 @@ namespace Tetrisz
             }
         }
 
+        
 
     }
 }

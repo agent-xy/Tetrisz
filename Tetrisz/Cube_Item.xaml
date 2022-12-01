@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="100" d:DesignWidth="100">
     <Grid>
-        <Border Background="#1e1e1e" BorderBrush="White" BorderThickness="0.2">
+        <Border Background="#2e2e2e" BorderBrush="White" BorderThickness="0.2">
             
         </Border>
     </Grid>
