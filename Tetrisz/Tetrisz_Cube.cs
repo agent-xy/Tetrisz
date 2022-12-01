@@ -15,8 +15,8 @@ namespace Tetrisz
         public Tetrisz_Cube(int v, int i, int j)
         {
             Texture = new Cube_Item() {
-                Width = 100,
-                Height = 100,
+                Width = 35,
+                Height = 35,
             };
             Mat_Pos = new int[2] { i, j };
             Value = v;

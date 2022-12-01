@@ -24,12 +24,14 @@ namespace Tetrisz
         public MainWindow()
         {
             InitializeComponent();
-            Main = this;
+            _WP_Grid.Width = 35 * 10;
+            _WP_Grid.Height = 35 * 20;
+            _Main = this;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
+            Game_BackEnd.Start_Game();
         }
     }
 }

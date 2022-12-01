@@ -12,10 +12,37 @@ namespace Tetrisz
         public static Tetrisz_Cube[,] _Map;
 
         private static List<int[,]> _Mintak;
+        private static bool Game_On;
+        private static Tetrisz_Cube[,] Pocket_Map;
         public static void Start_Game()
         {
             _Mintak_Upload();
+            _Pocket_Matrix();
             _Map_Gen();
+            Game_On = true;
+            _Loader();
+        }
+
+        private static void _Pocket_Matrix()
+        {
+            Pocket_Map = new Tetrisz_Cube[4, 4];
+
+            for (int i = 0; i < Pocket_Map.GetLength(0); i++)
+            {
+                for (int j = 0; j < Pocket_Map.GetLength(1); j++)
+                {
+                    Pocket_Map[i, j] = new Tetrisz_Cube(0, i, j);
+                    MainWindow._Main._SP_Pocket_Matrix.Children.Add(Pocket_Map[i, j].Texture);
+                }
+            }
+        }
+
+        private static void _Loader()
+        {
+            while (Game_On)
+            {
+
+            }
         }
 
         private static void _Mintak_Upload()
@@ -41,5 +68,7 @@ namespace Tetrisz
                 }
             }
         }
+
+
     }
 }
