@@ -45,10 +45,15 @@ namespace Tetrisz
                     _Generate_New_Item();
                 } else
                 {
-
+                    _Moving_Items_Moving();
                 }
                 
             }
+        }
+
+        private static void _Moving_Items_Moving()
+        {
+
         }
 
         private static void _Generate_New_Item()
