@@ -58,7 +58,8 @@ namespace Tetrisz
 
         private static void _Generate_New_Item()
         {
-
+            Random rnd = new Random();
+            Moving_Item = _Mintak[rnd.Next(0, _Mintak.Count - 1)];
         }
 
         private static void _Pocket_Matrix()
